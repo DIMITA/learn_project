@@ -37,7 +37,6 @@ function update() {
      });
     
      const actives = document.querySelectorAll('.active');
-     console.log('le width', actives)
      progress.style.width = (actives.length - 1) / (circles.length - 1) * 100  + "%";
 
      if(currentActive === 1) {
