@@ -1,0 +1,20 @@
+services:
+  kkiapay_database:
+    container_name: kkiapay_database
+    image: mongo:4.0.6
+    networks:
+      - kkiapay_network
+  payment_api:
+    image: e1a924fcf708
+    networks: 
+      - kkiapay_network
+    ports:
+      - 3000:4004
+    depends_on: 
+      - kkiapay_database
+    environment: 
+      DATABASE_URL: mongodb://kkiapay_database/payments
+      nats: 192.168.100.240:4222
+networks:
+  kkiapay_network:
+    external: true
