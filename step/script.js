@@ -76,36 +76,3 @@ function update() {
      
 }
 
-function swithTabs() {
-    switch (currentActive) {
-        case 1:
-            one.style.display = "block"
-            two.style.display = "none"
-            three.style.display = "none"
-            four.style.display = "none"
-            break;
-        case 2:
-            one.style.display = "none"
-            two.style.display = "block"
-            three.style.display = "none"
-            four.style.display = "none"
-            break;
-
-        case 3:
-            one.style.display = "none"
-            two.style.display = "none"
-            three.style.display = "block"
-            four.style.display = "none"
-            break;
-
-        case 4:
-            one.style.display = "none"
-            two.style.display = "none"
-            three.style.display = "none"
-            four.style.display = "block"
-            break;
-    
-        default:
-            break;
-    }
-}
