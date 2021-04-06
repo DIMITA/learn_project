@@ -1,0 +1,52 @@
+/* @import url('https://fonts.googleapis.com/css?family=Muli &display=swap'); */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    min-height: 100vh;
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glass {
+    width: 60vw;
+    height: 80vh;
+    background: white;
+    z-index: 3;
+    border-radius: 2rem;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(2rem);
+}
+
+.circle1, .circle2 {
+    position: absolute;
+    width: 16rem;
+    height: 16rem;
+    background: white;
+    border-radius: 50%;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5));
+}
+
+.circle1 {
+    top: 5%;
+    right: 15%;
+}
+
+.circle2 {
+    bottom: 5%;
+    left: 10%;
+}
+
+/* .nav {
+    width: 30%;
+    height: 100%;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 2px;
+} */
