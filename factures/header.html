@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/getstream/dist/js_min/getstream.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <script>
+
+        console.log('kpoin', stream.connect())
+        
+
+    async function wil () {
+        const doc = ""
+        const footer = await fetch('footer.html')
+        const axiosreq = axios.create({
+            baseURL: 'template-content'
+        });
+        
+        dataBody = {
+            reference: "KJhkffljkj"
+        }
+        
+        console.log('kpoin')
+        let data = {
+            projectId: 'kkp-v1',
+            data: dataBody,
+            documentFooter: footer,
+            document: doc,
+            options: JSON.stringify({
+                marginLeft: '0mm',
+                marginRight: '0mm'
+                })
+            }
+            console.log(data)
+        console.log(await axios.post('https://docsgen-dev.opensi.co/pdf/template-content', data))
+    }
+        
+        wil()
+        
+        </script>
+</body>
+</html>

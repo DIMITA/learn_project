@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://flashphoner.com/downloads/builds/flashphoner_client/wcs_api-2.0/current/flashphoner.js"></script>
+
+</head>
+<body onload="init_api()">
+
+    <div id="screen-sharing" style="width:320px;height:240px;border: solid 1px"></div>
+    <input type="button" onclick="connect()" value="Share Screen"/>
+
+    <script>
+
+
+var SESSION_STATUS = Flashphoner.constants.SESSION_STATUS;
+var STREAM_STATUS = Flashphoner.constants.STREAM_STATUS;
+var session;
+        function init_api() {
+    Flashphoner.init({});
+}
+ 
+//Connect to WCS server over websockets
+function connect() {
+    session = Flashphoner.createSession({
+        urlServer: "wss://demo.flashphoner.com"
+    }).on(SESSION_STATUS.ESTABLISHED, function(session) {
+        startStreaming(session);
+    });
+}
+ 
+//Publishing Share Screen 
+function startStreaming(session) {
+    var constraints = {
+        video: {}
+    };
+    constraints.video.type = "screen";
+    constraints.video.withoutExtension = true;
+    session.createStream({
+        name: "mystream",
+        display: document.getElementById("screen-sharing"),
+        constraints: constraints
+    }).publish();
+}
+    </script>
+    
+</body>
+</html>
